@@ -3,8 +3,8 @@ package greeting
 import "testing"
 
 func TestSay(t *testing.T) {
-	tests := []struct{
-		input string
+	tests := []struct {
+		input  string
 		expect string
 	}{
 		{

@@ -2,13 +2,14 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"os"
+
+	"github.com/spf13/cobra"
 )
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "sample-github-actions",
+	Use: "sample-github-actions",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		fmt.Println("hello")
 		return nil
