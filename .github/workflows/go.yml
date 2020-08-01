@@ -30,10 +30,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Install packages
-        run: |
-          apt-get update
-          apt-get install make
+      # - name: Install packages
+      #   run: |
+      #     apt-get update
+      #     apt-get install make
 
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
