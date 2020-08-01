@@ -1,4 +1,4 @@
-name: Go
+name: ci
 
 on:
   push:
@@ -11,7 +11,7 @@ env:
 
 jobs:
   lint:
-    name: Lint
+    name: lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
           args: -E golint,gofmt,goimports
 
   build:
-    name: Build
+    name: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
