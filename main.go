@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "github.com/kobtea/sample-github-actions/cmd"
 
 func main() {
-	fmt.Println("hello github actions")
+	cmd.Execute()
 }
