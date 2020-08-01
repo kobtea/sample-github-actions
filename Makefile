@@ -14,4 +14,4 @@ test:
 	go test ./...
 
 build:
-	go build -ldflags='-X github.com/kobtea/sample-github-actions/cmd.Version=$(shell cat VERSION)'
+	go build -ldflags='-s -w -X github.com/kobtea/sample-github-actions/cmd.Version=$(shell cat VERSION)'
