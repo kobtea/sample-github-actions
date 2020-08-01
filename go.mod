@@ -1,3 +1,3 @@
-module github.com/kobtea/github-actions-sample
+module github.com/kobtea/sample-github-actions
 
-go 1.12
+go 1.14
