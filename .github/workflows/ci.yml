@@ -48,3 +48,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: kobtea/release-tag-action@master
+  greet:
+    name: greet
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/hello-world-docker-action@master
+        with:
+          who-to-greet: 'kobtea'
