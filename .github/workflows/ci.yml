@@ -49,4 +49,6 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           version=$(cat VERSION)
+          git config user.name  || git config --local user.name  "gha-job"
+	        git config user.email || git config --local user.email "kobtea9696@gmail.com"
           git rev-parse $version > /dev/null 2>&1 || (git tag -a $version -m "release $version" && git push origin $version)
