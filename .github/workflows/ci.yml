@@ -51,4 +51,4 @@ jobs:
           version=$(cat VERSION)
           git config user.name  || git config --local user.name $(git log -1 --pretty=format:'%an')
           git config user.email || git config --local user.email $(git log -1 --pretty=format:'%ae')
-          git rev-parse $version > /dev/null 2>&1 || (git tag -a $version -m "release $version" && git push origin $version)
+          git ls-remote --exit-code --tags origin $version > /dev/null 2>&1 || (git tag -a $version -m "release $version" && git push origin $version)
