@@ -42,16 +42,17 @@ jobs:
 
       - name: Test
         run: make test
-  tag:
-    name: tag
+  tag-full:
+    name: tag full
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: kobtea/release-tag-action@master
-  greet:
-    name: greet
+  tag-major:
+    name: tag major
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/hello-world-docker-action@master
+      - uses: actions/checkout@v2
+      - uses: kobtea/release-tag-action@master
         with:
-          who-to-greet: 'kobtea'
+          only_major_version: true
