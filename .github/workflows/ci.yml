@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: kobtea/release-tag-action@a07ecb3e90cac36ce49801a9f49a6529098d3c48
+      - uses: kobtea/release-tag-action@master
         with:
           message: gogo __VERSION__
   tag-major:
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: kobtea/release-tag-action@a07ecb3e90cac36ce49801a9f49a6529098d3c48
+      - uses: kobtea/release-tag-action@master
         with:
           force: true
           only_major_version: true
