@@ -1,0 +1,21 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: notlmn/release-with-changelog@v1
+        with:
+          header: '## Changelog'
+          include-hash: true
+        env:
+          RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
