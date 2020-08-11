@@ -42,15 +42,15 @@ jobs:
 
       - name: Test
         run: make test
-  tag-major:
-    name: tag major
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: kobtea/release-tag-action@master
-        with:
-          force: true
-          only_major_version: true
+  #  tag-major:
+  #    name: tag major
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - uses: actions/checkout@v2
+  #      - uses: kobtea/release-tag-action@master
+  #        with:
+  #          force: true
+  #          only_major_version: true
   tag-full:
     name: tag full
     runs-on: ubuntu-latest
