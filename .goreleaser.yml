@@ -29,6 +29,14 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+dockers:
+  - goos: linux
+    goarch: amd64
+    image_templates:
+      - docker.pkg.github.com/kobtea/sample-github-actions/main:latest
+      - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}
+      - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}
+    dockerfile: Dockerfile.goreleaser
 nfpms:
   - homepage: https://github.com/kobtea/sample-github-actions
     maintainer: Hiroaki Kobayashi <kobtea9696@gmail.com>

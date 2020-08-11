@@ -1,0 +1,3 @@
+FROM scratch
+COPY sample-github-actions /
+ENTRYPOINT ["/sample-github-actions"]
