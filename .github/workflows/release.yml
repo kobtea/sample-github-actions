@@ -22,3 +22,15 @@ jobs:
           args: release --rm-dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Login to GitHub Packages
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }} | \
+          docker login docker.pkg.github.com -u kobtea --password-stdin
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: kobtea/sample-github-actions/main
+          tags: latest
+          tag_with_ref: true

@@ -3,7 +3,11 @@ before:
     - go mod download
     - go generate ./...
 builds:
-  - env:
+  - main: ./main.go
+    ldflags:
+      - -s -w
+      - -X github.com/kobtea/sample-github-actions/cmd.Version={{.Version}}
+    env:
       - CGO_ENABLED=0
     goos:
       - linux
@@ -25,3 +29,11 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+nfpms:
+  - homepage: https://github.com/kobtea/sample-github-actions
+    maintainer: Hiroaki Kobayashi <kobtea9696@gmail.com>
+    description: sample github actions
+    license: MIT
+    formats:
+      - deb
+      - rpm
