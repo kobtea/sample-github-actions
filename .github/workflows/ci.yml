@@ -53,6 +53,9 @@ jobs:
   #          only_major_version: true
   tag-full:
     name: tag full
+    needs:
+      - lint
+      - build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

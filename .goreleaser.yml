@@ -12,13 +12,6 @@ builds:
     goos:
       - linux
       - darwin
-archives:
-  - replacements:
-      darwin: Darwin
-      linux: Linux
-      windows: Windows
-      386: i386
-      amd64: x86_64
 checksum:
   name_template: 'checksums.txt'
 snapshot:
@@ -36,6 +29,9 @@ dockers:
       - docker.pkg.github.com/kobtea/sample-github-actions/main:latest
       - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}
       - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}
+      - ghcr.io/kobtea/sample-github-actions:latest
+      - ghcr.io/kobtea/sample-github-actions:v{{ .Major }}
+      - ghcr.io/kobtea/sample-github-actions:{{ .Tag }}
     dockerfile: Dockerfile.goreleaser
 nfpms:
   - homepage: https://github.com/kobtea/sample-github-actions
