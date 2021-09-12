@@ -46,6 +46,7 @@ dockers:
       - ghcr.io/kobtea/sample-github-actions:latest-amd64
       - ghcr.io/kobtea/sample-github-actions:v{{ .Major }}-amd64
       - ghcr.io/kobtea/sample-github-actions:{{ .Tag }}-amd64
+    skip_push: true
     dockerfile: Dockerfile.goreleaser
     use: buildx
     build_flag_templates:
@@ -64,6 +65,7 @@ dockers:
       - ghcr.io/kobtea/sample-github-actions:latest-arm64
       - ghcr.io/kobtea/sample-github-actions:v{{ .Major }}-arm64
       - ghcr.io/kobtea/sample-github-actions:{{ .Tag }}-arm64
+    skip_push: true
     dockerfile: Dockerfile.goreleaser
     use: buildx
     build_flag_templates:
