@@ -40,9 +40,9 @@ dockers:
   - goos: linux
     goarch: amd64
     image_templates:
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:latest-amd64
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}-amd64
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}-amd64
+      # - docker.pkg.github.com/kobtea/sample-github-actions/main:latest-amd64
+      # - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}-amd64
+      # - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}-amd64
       - ghcr.io/kobtea/sample-github-actions:latest-amd64
       - ghcr.io/kobtea/sample-github-actions:v{{ .Major }}-amd64
       - ghcr.io/kobtea/sample-github-actions:{{ .Tag }}-amd64
@@ -58,9 +58,9 @@ dockers:
   - goos: linux
     goarch: arm64
     image_templates:
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:latest-arm64
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}-arm64
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}-arm64
+      # - docker.pkg.github.com/kobtea/sample-github-actions/main:latest-arm64
+      # - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}-arm64
+      # - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}-arm64
       - ghcr.io/kobtea/sample-github-actions:latest-arm64
       - ghcr.io/kobtea/sample-github-actions:v{{ .Major }}-arm64
       - ghcr.io/kobtea/sample-github-actions:{{ .Tag }}-arm64
@@ -74,18 +74,18 @@ dockers:
       - --label=org.opencontainers.image.version={{.Tag}}
       - --platform=linux/arm64
 docker_manifests:
-  - name_template: docker.pkg.github.com/kobtea/sample-github-actions/main:latest
-    image_templates:
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:latest-amd64
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:latest-arm64
-  - name_template: docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}
-    image_templates:
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}-amd64
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}-arm64
-  - name_template: docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}
-    image_templates:
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}-amd64
-      - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}-arm64
+  # - name_template: docker.pkg.github.com/kobtea/sample-github-actions/main:latest
+  #   image_templates:
+  #     - docker.pkg.github.com/kobtea/sample-github-actions/main:latest-amd64
+  #     - docker.pkg.github.com/kobtea/sample-github-actions/main:latest-arm64
+  # - name_template: docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}
+  #   image_templates:
+  #     - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}-amd64
+  #     - docker.pkg.github.com/kobtea/sample-github-actions/main:v{{ .Major }}-arm64
+  # - name_template: docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}
+  #   image_templates:
+  #     - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}-amd64
+  #     - docker.pkg.github.com/kobtea/sample-github-actions/main:{{ .Tag }}-arm64
   - name_template: ghcr.io/kobtea/sample-github-actions:latest
     image_templates:
       - ghcr.io/kobtea/sample-github-actions:latest-amd64
