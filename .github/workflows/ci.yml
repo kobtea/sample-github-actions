@@ -54,3 +54,4 @@ jobs:
       - uses: kobtea/release-tag-action@master
         with:
           message: gogo __VERSION__
+          version_file: ./sub/VERSION
