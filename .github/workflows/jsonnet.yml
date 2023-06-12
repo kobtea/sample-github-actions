@@ -1,0 +1,14 @@
+name: jsonnet
+
+on:
+  pull_request:
+
+jobs:
+  jsonnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: kobtea/setup-jsonnet-action@v1
+      - run: |
+          jsonnet --version
+          jb --version
