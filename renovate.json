@@ -1,29 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionDigests"
-  ],
-  "osvVulnerabilityAlerts": true,
-  "vulnerabilityAlerts": {
-    "labels": ["security"],
-    "automerge": false,
-    "minimumReleaseAge": null
-  },
-  "minimumReleaseAge": "7 days",
-  "dependencyDashboard": true,
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["before 5am on Monday"]
-  },
-  "packageRules": [
-    {
-      "matchManagers": ["dockerfile"],
-      "pinDigests": true
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "groupName": "GitHub Actions"
-    }
+    "github>kobtea/renovate-config"
   ]
 }
