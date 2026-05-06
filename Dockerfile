@@ -1,4 +1,4 @@
-FROM golang:1.17 as builder
+FROM golang:1.26@sha256:b54cbf583d390341599d7bcbc062425c081105cc5ef6d170ced98ef9d047c716 as builder
 
 ARG VERSION
 
